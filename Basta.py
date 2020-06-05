@@ -1,4 +1,6 @@
 # Codecademy Basta Fazoolin' project
+# Further work:
+# Use datetime module for times
 
 class Menu:
 	# name = str, items = {str:float}, start_time = int, end_time = int
@@ -9,8 +11,10 @@ class Menu:
 		self.end_time=end_time
 
 	def __repr__(self):
-		return("The {name} menu is available from {start}:00 until {end}:00.".format(name=self.name,start=self.start_time,end=self.end_time))
-
+		string=("The {name} menu is available from {start}:00 until {end}:00.".format(name=self.name,start=self.start_time,end=self.end_time))
+		for item in self.items:
+			string += "\n{item}: £{price}".format(item=item,price=self.items[item])
+		return string
 	def calculate_bill(self, purchased_items):
 		total=0
 		for item in purchased_items:
@@ -46,7 +50,7 @@ early_bird = Menu("Early-bird", {'salumeria plate': 8.00, 'salad and breadsticks
 dinner = Menu("Dinner",{'crostini with eggplant caponata': 13.00, 'ceaser salad': 16.00, 'pizza with quattro formaggi': 11.00, 'duck ragu': 19.50, 'mushroom ravioli (vegan)': 13.50, 'coffee': 2.00, 'espresso': 3.00,},17,23)
 kids = Menu("Kids",{'chicken nuggets': 6.50, 'fusilli with wild mushrooms': 12.00, 'apple juice': 3.00},11,21)
 
-#print(brunch)
+print(brunch)
 #print(brunch.calculate_bill(["pancakes","home fries","coffee"]))
 #print(early_bird.calculate_bill(["salumeria plate","mushroom ravioli (vegan)"]))
 
