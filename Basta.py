@@ -25,7 +25,7 @@ class Franchise:
 		self.menus = menus
 
 	def __repr__(self):
-		print("This branch is at {address}".format(address=self.address))
+		return("This branch is at {address}".format(address=self.address))
 
 
 brunch = Menu("Brunch",{'pancakes': 7.50, 'waffles': 9.00, 'burger': 11.00, 'home fries': 4.50, 'coffee': 1.50, 'espresso': 3.00, 'tea': 1.00, 'mimosa': 10.50, 'orange juice': 3.50},11,16)
@@ -39,3 +39,5 @@ kids = Menu("Kids",{'chicken nuggets': 6.50, 'fusilli with wild mushrooms': 12.0
 
 flagship_store = Franchise("1232 West End Road", [brunch, early_bird, kids, dinner])
 new_installment = Franchise("12 East Mulberry Street", [brunch, early_bird, kids, dinner])
+
+print (flagship_store)
